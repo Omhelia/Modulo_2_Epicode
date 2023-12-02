@@ -1,0 +1,119 @@
+//RUSSO ALESSIO ESERCITAZIONE IN C - ESERCITAZIONE 4 MODULO 2
+
+#include <stdio.h>
+#include <math.h>
+
+
+void descrGioco();
+char mostraMenu();
+void iniziaNuovaPartita();
+void presentaNuovaDomanda(char domanda[], char rispostaA[], char rispostaB[], char rispostaC[], char rispostaCorretta);
+void vRisposta(char rispostaUtente, char rispostaCorretta);
+void terminaPartita(int punteggio);
+
+
+// Gioco Blocco Principale
+
+int main() {
+    descrGioco();
+
+    char scelta;
+    do {
+        scelta = mostraMenu();
+
+        if (scelta == 'A'|| 'a') {
+            iniziaNuovaPartita();
+        } else if (scelta == 'B' || 'b') {
+            printf("Grazie per aver giocato. Arrivederci!\n");
+            break;
+        } else {
+            printf("Scelta non valida. Riprova.\n");
+        }
+    } while (1);
+
+    return 0;
+}
+
+// FUNZIONE DESCRIZIONE
+
+void descrGioco() {
+    printf("Benvenuto nel gioco di domanda/risposta!\n");
+    printf("Rispondi  alle domande per aumentare il tuo punteggio, sono ammesse risposte con le corrispondenti lettere A, B o C.\n");
+}
+
+// FUNZIONE MENU INIZIO GIOCO
+
+char mostraMenu() {
+    char scelta;
+    printf("\nMenu:\n");
+    printf("A) Inizia una nuova partita\n");
+    printf("B) Esci dal gioco\n");
+    printf("Scelta: ");
+    scanf(" %c", &scelta);
+    return scelta;
+}
+
+
+// FUNZIONE PER INIZIARE LA PARTITA
+
+void iniziaNuovaPartita() {
+    char nomeUtente[20];
+    printf("Inserisci il tuo nome: ");
+    scanf("%s", nomeUtente);
+
+    int punteggio = 0;
+
+    // Domanda 1
+    presentaNuovaDomanda("Qual è la capitale dell'Italia?", "A) Roma", "B) Parigi", "C) Madrid", 'A' || 'a');
+    punteggio++;
+
+    // Domanda 2
+    presentaNuovaDomanda("Quanto fa 7 x 8?", "A) 56", "B) 64", "C) 72", 'A' || 'a');
+    punteggio++;
+
+    // Domanda 3
+    presentaNuovaDomanda("Dove si trova la Torre Eiffel?", "A) Londra", "B) Parigi", "C) Berlino", 'B' || 'b');
+    punteggio++;
+
+    // Domanda 4
+    presentaNuovaDomanda("Quanto è alto l'Everest?", "A) 7.848 metri", "B) 6.543 metri", "C) 8.912 metri", 'A' || 'a');
+    punteggio++;
+
+    // Domanda 5
+    presentaNuovaDomanda("Quale fiume attraversa Roma?", "A) Tevere", "B) Po", "C) Danubio", 'A' || 'a');
+    punteggio++;
+
+    terminaPartita(punteggio);
+}
+
+// FUNZIONE DOMANDE
+
+void presentaNuovaDomanda(char domanda[], char rispostaA[], char rispostaB[], char rispostaC[], char rispostaCorretta) {
+    char rispostaUtente;
+
+    printf("\n%s\n", domanda);
+    printf("%s\n", rispostaA);
+    printf("%s\n", rispostaB);
+    printf("%s\n", rispostaC);
+
+    printf("Inserisci la lettera corrispondente alla tua risposta: ");
+    scanf(" %c", &rispostaUtente);
+
+    vRisposta(rispostaUtente, rispostaCorretta);
+}
+
+
+//FUNZIONE PUNTEGGIO
+
+void vRisposta(char rispostaUtente, char rispostaCorretta) {
+    if (rispostaUtente == rispostaCorretta) {
+        printf("Risposta corretta! +1 punto\n");
+    } else {
+        printf("Risposta errata. La risposta corretta era %c\n", rispostaCorretta);
+    }
+}
+
+void terminaPartita(int punteggio) {
+    printf("\nPartita terminata. Il tuo punteggio finale è: %d\n", punteggio);
+}
+
