@@ -37,7 +37,7 @@ int main() {
 // FUNZIONE DESCRIZIONE
 
 void descrGioco() {
-    printf("Benvenuto nel gioco di domanda/risposta!\n");
+    printf("Benvenuto in Quizzami\n");
     printf("Rispondi  alle domande per aumentare il tuo punteggio, sono ammesse risposte con le corrispondenti lettere A, B o C.\n");
 }
 
