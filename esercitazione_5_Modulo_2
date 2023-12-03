@@ -1,0 +1,61 @@
+# ESERCITAZIONE 5 MODULO 2 - "RUSSO ALESSIO" 
+
+import math # importo libreria math per calcoli
+import sys #importo funzine di chiusura 
+
+#inizio codice
+
+print("\nScegli la figura geometrica per la quale vuoi calcolare i dati attraverso il numero in discato a display")
+print("1. Quadrato")
+print("2. Cerchio")
+print("3. Rettangolo")
+print("4. Esci")
+
+
+scelta = input("inserisci il numero corrispondente alla tua scelta")
+
+if scelta == '1':
+
+    #Calcolo perimetro quadrato
+    
+    print("Calcolo perimetro quadrato")
+
+    lato = float(input("inserisci un lato del quadrato per calcolare il perimetro:"))
+
+    perimetroQuadrato = lato * 4
+
+    print("Il perimetro del quadrato è:", perimetroQuadrato)
+
+elif scelta == '2': 
+
+    #Calcolo circonferenza Cerchio
+
+    print("Calcolo circonferenza cerchio")
+    
+    raggio=float(input("inserisci il raggio del cerchio:"))
+
+    circC= math.pi *raggio*2
+
+    print("La circonferenza è pari a:", circC)
+
+elif scelta == '3':
+
+    #Calcolo Perimetro Rettangolo
+
+    print("Calcolo perimetro di un rettangolo")
+
+    base= float(input("inserisci la misura della base del rettangolo"))
+
+    altezza=float(input("inserisci l'altezza del rettangolo"))
+
+    perimetroRettangolo = base * 2 + altezza * 2
+
+    print("Il perimetro del rettangono è:", perimetroRettangolo)
+    
+elif scelta == '4':
+    
+    #Uscita Software
+    
+    print("grazie per aver usato il nostro software")
+    
+    sys.exit
