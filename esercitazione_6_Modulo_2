@@ -1,0 +1,19 @@
+    # Chiedi all'utente di inserire il numero di posizioni per calcolare la lunghezza del ciclo for
+n = int(input("Inserisci la lunghezza della lista A : "))
+
+    # Inizializzo la lista A
+lista_a = []
+
+    # Ciclo for per ottenere le parole dall'utente e avvalorare la lista A
+for i in range(n):
+    parola = input(f"Inserisci la parola per la posizione {i + 1}: ")
+    lista_a.append(parola)
+
+    # Stampo la lista A
+print("Lista A:", lista_a)
+
+    # Creo la lista B con le lunghezza della parole nella lista A all'esatta posizione della parola
+lista_b = [len(parola) for parola in lista_a]
+
+    # Stampo la lista B
+print("Lista B (lunghezza delle parole nella lista A):", lista_b)
