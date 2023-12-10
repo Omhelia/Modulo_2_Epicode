@@ -1,0 +1,31 @@
+"""
+
+Scrivi una funzione generatrice di password.
+La funzione deve generare una stringa alfanumerica di 8 caratteri
+qualora l'utente voglia una password semplice,
+o di 20 caratteri ascii qualora desideri una password più complicata.
+
+
+RUSSO ALESSIO
+
+"""
+import random
+import string
+
+psw = str(input("che tipo di password vuoi generare?: digita A. per una password semplica, B per una complessa :\n"))
+
+alphapswd = string.digits+ string.ascii_letters
+
+pswdA = " "
+i = 0
+if psw == 'A':
+    lenght = 8
+    pswtype = asciipsw
+else:
+    lenght = 20
+    pswtype = alphapswd
+
+while i < lenght:
+    char = random.choice(pswtype)
+    psw += char
+    i += 1
